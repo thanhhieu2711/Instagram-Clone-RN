@@ -7,7 +7,7 @@ import {
   Pressable,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Video from 'react-native-video';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,6 +15,7 @@ const SingleReel = ({item, index, currentIndex}) => {
   const {width, height} = useWindowDimensions();
   const [mute, setMute] = useState(false);
   const [active, setActive] = useState(false);
+  const videoPlayer = useRef();
   const handleActive = () => {
     setActive(true);
     setTimeout(() => {
@@ -30,12 +31,13 @@ const SingleReel = ({item, index, currentIndex}) => {
           handleActive();
         }}>
         <Video
+          ref={ref => (videoPlayer.current = ref)}
           source={item.video}
           className="w-full h-full"
           resizeMode="cover"
           repeat={true}
           pause={false}
-          mute={true}
+          mute={mute}
         />
       </Pressable>
       <ReelInfo item={item} />

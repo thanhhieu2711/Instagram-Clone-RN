@@ -182,9 +182,7 @@ const LoginScreen = ({navigation}) => {
       <TouchableOpacity
         className="w-5/6 bg-white rounded-md items-center mt-5"
         onPress={handleLogin}>
-        <Text
-          className="text-pink-600 font-semibold py-4 text-lg 
-      leading-5 tracking-wide">
+        <Text className="text-pink-600 font-semibold py-4 text-lg leading-5 tracking-wide">
           Login
         </Text>
       </TouchableOpacity>

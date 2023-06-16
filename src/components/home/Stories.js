@@ -6,8 +6,6 @@ import React, {useEffect, useState} from 'react';
 import InstaStory from 'react-native-insta-story';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import {arrayUnion, doc, updateDoc} from 'firebase/firestore';
-import {db} from '../../../firebase-config';
 
 const Stories = ({currentUser, stories}) => {
   const [flag, setFlag] = useState(true);
@@ -35,8 +33,11 @@ const Stories = ({currentUser, stories}) => {
             data={stories}
             duration={5}
             unPressedBorderColor={'orange'}
-            avatarSize={78}
-            showAvatarText={false}
+            unPressedAvatarTextColor={'white'}
+            pressedAvatarTextColor={'white'}
+            avatarSize={75}
+            showAvatarText={true}
+            avatarTextStyle={{fontSize: 15, fontWeight: 500}}
             storyAvatarImageStyle={{width: 42, height: 42}}
             renderCloseComponent={({item, onPress}) => {
               return (

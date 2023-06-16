@@ -28,7 +28,6 @@ const NotificationScreen = ({route}) => {
             );
             return search;
           });
-          console.log(sender);
           return (
             <View
               key={item.notification_id}

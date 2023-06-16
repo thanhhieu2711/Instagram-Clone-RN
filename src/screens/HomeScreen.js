@@ -23,9 +23,9 @@ const HomeScreen = () => {
 
   const [stories] = useCollectionData(collectionGroup(db, 'stories'));
 
+  // console.log(test[0].stories);
   // Check và lọc ra những user có stories
   const isExistStory = stories?.filter(story => story?.stories?.length !== 0);
-
   // use variable loadingUsers and useEffect to handle async process get users from firebase then update redux store
 
   useEffect(() => {
@@ -39,14 +39,17 @@ const HomeScreen = () => {
         <Header currentUser={currentUser} />
         <Stories currentUser={currentUser} stories={isExistStory} />
         <Divider color={'grey'} height={0.2} />
-        {posts?.map((item, index) => (
-          <Posts
-            key={index}
-            post={{item}}
-            users={{loadingUsers, users}}
-            currentUser={currentUser}
-          />
-        ))}
+        {/* SORT POST THEO THỨ TỰ MỚI NHẤT */}
+        {posts
+          ?.sort((p1, p2) => p2?.createAt - p1?.createAt)
+          ?.map((item, index) => (
+            <Posts
+              key={index}
+              post={{item}}
+              users={{loadingUsers, users}}
+              currentUser={currentUser}
+            />
+          ))}
       </ScrollView>
       <Toast />
     </SafeAreaView>
