@@ -4,7 +4,7 @@ import Header from '../components/postlike/Header';
 import BoxSearch from '../components/search/BoxSearch';
 import ListLike from '../components/postlike/ListLike';
 const PostLikeScreen = ({route}) => {
-  const {post, currentUser, postRef} = route.params;
+  const {post} = route.params;
   return (
     <SafeAreaView className="flex-1 bg-black">
       <Header />

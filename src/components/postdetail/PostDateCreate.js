@@ -16,7 +16,7 @@ function PostDateCreate({post}) {
   return (
     <View className="mt-3 ml-4">
       <Text className="text-white/40 font-semibold">
-        {dayDiff > 30 ? '1 month ago' : `${dayDiff} days ago`}{' '}
+        {dayDiff > 30 ? Math.floor(dayDiff / 30) : `${dayDiff} days ago`}{' '}
       </Text>
     </View>
   );

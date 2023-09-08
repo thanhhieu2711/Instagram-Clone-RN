@@ -26,7 +26,6 @@ const Stories = ({currentUser, stories}) => {
         contentContainerStyle={{columnGap: 15, paddingHorizontal: 10}}
         className="flex-row items-center">
         <CurrentUserStory {...currentUser} />
-
         {flag && stories && (
           <InstaStory
             className="flex-1"

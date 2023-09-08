@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 
 const Divider = ({color, height}) => {
